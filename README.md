@@ -12,6 +12,7 @@ Please contribute new websites!
 - Nature
 - Taylor and Francis
 - Elsevier / ScienceDirect
+- Eureka Select
 
 ## Screenshots
 

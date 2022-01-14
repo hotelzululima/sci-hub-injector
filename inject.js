@@ -66,6 +66,23 @@ function sciencedirect() {
   }, 1000);
 }
 
+function eurekaSelect() {
+  const doiLinks = Array.from(document.querySelectorAll("a"))
+    .filter((a) => a.href.includes("doi.org"))
+    .map((a) => a.href);
+  const doi = doiLinks[0].split(".org/")[1];
+  const form = document.getElementById("addtocartForm");
+  form.innerHTML += `
+  <div class="col-md-4 text-right">
+    <a href="${sciHubLink(doi)}" class="btn btn-download hvr-icon-hang">
+    View on SciHub
+
+    <img width="24" height="24" src="https://sci-hub.se/misc/img/ravenround.gif" /> 
+    </a>
+  </div>
+  `;
+}
+
 function addSciHubLink() {
   const url = document.location.href;
   if (url.includes("pubmed.ncbi.nlm.nih.gov")) {
@@ -76,6 +93,8 @@ function addSciHubLink() {
     taylorFrancis();
   } else if (url.includes("www.sciencedirect.com")) {
     sciencedirect();
+  } else if (url.includes("eurekaselect.com")) {
+    eurekaSelect();
   }
 }
 

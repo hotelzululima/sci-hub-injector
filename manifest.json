@@ -9,7 +9,8 @@
         "https://pubmed.ncbi.nlm.nih.gov/*",
         "https://www.nature.com/*",
         "https://www.tandfonline.com/*",
-        "https://www.sciencedirect.com/*"
+        "https://www.sciencedirect.com/*",
+        "http://www.eurekaselect.com/*"
       ],
       "js": ["inject.js"]
     }
