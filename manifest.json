@@ -7,7 +7,8 @@
     {
       "matches": [
         "https://pubmed.ncbi.nlm.nih.gov/*",
-        "https://www.nature.com/*"
+        "https://www.nature.com/*",
+        "https://www.tandfonline.com/*"
       ],
       "js": ["inject.js"]
     }

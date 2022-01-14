@@ -31,12 +31,28 @@ function nature() {
 	`;
 }
 
+function taylorFrancis() {
+  const doi = document
+    .querySelector(".dx-doi > a")
+    .textContent.split(".org/")[1];
+  const menu = document.querySelector(".tab-nav");
+  menu.innerHTML += `
+  <li role="tab" aria-selected="false" aria-expanded="false">
+    <a class="grant-access" href="${sciHubLink(doi)}">
+      Access on SciHub
+    </a>
+  </li>
+	`;
+}
+
 function addSciHubLink() {
   const url = document.location.href;
   if (url.includes("pubmed.ncbi.nlm.nih.gov")) {
     pubMed();
   } else if (url.includes("nature.com")) {
     nature();
+  } else if (url.includes("tandfonline.com")) {
+    taylorFrancis();
   }
 }
 

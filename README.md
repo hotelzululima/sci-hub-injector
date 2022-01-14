@@ -10,6 +10,7 @@ Please contribute new websites!
 
 - PubMed
 - Nature
+- Taylor and Francis
 
 ## Screenshots
 
