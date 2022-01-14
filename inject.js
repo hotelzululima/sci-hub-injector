@@ -45,6 +45,27 @@ function taylorFrancis() {
 	`;
 }
 
+function sciencedirect() {
+  // Add timeout to prevent them from removing the link...
+  setTimeout(() => {
+    const doi = document.querySelector(".doi").textContent;
+    const menu = document.querySelector(".toolbar-buttons > ul");
+    menu.innerHTML += `
+    <li class="PrimaryCtaButton" id="PrimaryCtaButton">
+    <a
+      class="link-button link-button-primary accessbar-primary-link"
+      role="button"
+      rel="nofollow"
+      href="${sciHubLink(doi)}"
+      >
+      <img width="24" height="24" src="https://sci-hub.se/misc/img/ravenround.gif" /> 
+      <span class="link-button-text">Access on&nbsp;<strong>SciHub</strong></span></a
+    >
+  </li>
+`;
+  }, 1000);
+}
+
 function addSciHubLink() {
   const url = document.location.href;
   if (url.includes("pubmed.ncbi.nlm.nih.gov")) {
@@ -53,6 +74,8 @@ function addSciHubLink() {
     nature();
   } else if (url.includes("tandfonline.com")) {
     taylorFrancis();
+  } else if (url.includes("www.sciencedirect.com")) {
+    sciencedirect();
   }
 }
 

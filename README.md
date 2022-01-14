@@ -11,6 +11,7 @@ Please contribute new websites!
 - PubMed
 - Nature
 - Taylor and Francis
+- Elsevier / ScienceDirect
 
 ## Screenshots
 
