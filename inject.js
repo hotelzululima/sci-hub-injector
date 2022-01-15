@@ -101,6 +101,27 @@ function science() {
   `;
 }
 
+function wiley() {
+  const doiLinks = Array.from(document.querySelectorAll("a"))
+    .filter((a) => a.href.includes("doi.org"))
+    .map((a) => a.href);
+  const doi = doiLinks[0].split(".org/")[1];
+  const menu = document.querySelector(".coolBar__second.rlist");
+  menu.innerHTML += `
+  <div class="coolBar__section coolBar--download PdfLink cloned">
+    <a href="${sciHubLink(
+      doi
+    )}" title="SciHub" class="coolBar__ctrl pdf-download"
+      ><img
+        src="https://sci-hub.se/misc/img/ravenround.gif"
+        alt="SciHub Logo"
+      />
+      Access on SciHub
+    </a>
+  </div>
+  `;
+}
+
 function addSciHubLink() {
   const url = document.location.href;
   if (url.includes("pubmed.ncbi.nlm.nih.gov")) {
@@ -115,6 +136,8 @@ function addSciHubLink() {
     eurekaSelect();
   } else if (url.includes("science.org")) {
     science();
+  } else if (url.includes("wiley.com")) {
+    wiley();
   }
 }
 

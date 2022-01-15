@@ -12,7 +12,8 @@
         "https://www.tandfonline.com/*",
         "https://www.sciencedirect.com/*",
         "http://www.eurekaselect.com/*",
-        "https://www.science.org/*"
+        "https://www.science.org/*",
+        "https://dom-pubs.onlinelibrary.wiley.com/doi/*"
       ],
       "js": ["inject.js"]
     }
