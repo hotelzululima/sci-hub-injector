@@ -48,7 +48,7 @@ function taylorFrancis() {
 function sciencedirect() {
   // Add timeout to prevent them from removing the link...
   setTimeout(() => {
-    const doi = document.querySelector(".doi").textContent;
+    const doi = document.querySelector(".doi").textContent.split(".org/")[1];
     const menu = document.querySelector(".toolbar-buttons > ul");
     menu.innerHTML += `
     <li class="PrimaryCtaButton" id="PrimaryCtaButton">
