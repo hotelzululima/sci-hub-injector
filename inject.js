@@ -83,6 +83,24 @@ function eurekaSelect() {
   `;
 }
 
+function science() {
+  const doiLinks = Array.from(document.querySelectorAll("a"))
+    .filter((a) => a.href.includes("doi.org"))
+    .map((a) => a.href);
+  const doi = doiLinks[0].split(".org/")[1];
+  const menu = document.querySelector(".info-panel__formats.info-panel__item");
+  menu.innerHTML += `
+  <a
+    href="${sciHubLink(doi)}"
+    data-toggle="tooltip"
+    title=""
+    class="btn btn__request-access ml-1"
+    data-original-title="GET ACCESS"
+    ><img width="24" height="24" src="https://sci-hub.se/misc/img/ravenround.gif" class="mr-2" /> <span>get free access</span></a
+  >
+  `;
+}
+
 function addSciHubLink() {
   const url = document.location.href;
   if (url.includes("pubmed.ncbi.nlm.nih.gov")) {
@@ -95,6 +113,8 @@ function addSciHubLink() {
     sciencedirect();
   } else if (url.includes("eurekaselect.com")) {
     eurekaSelect();
+  } else if (url.includes("science.org")) {
+    science();
   }
 }
 

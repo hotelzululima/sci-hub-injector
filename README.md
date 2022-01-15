@@ -13,6 +13,7 @@ Please contribute new websites!
 - Taylor and Francis
 - Elsevier / ScienceDirect
 - Eureka Select
+- Science
 
 ## Screenshots
 
