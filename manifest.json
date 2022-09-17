@@ -13,9 +13,12 @@
         "https://www.sciencedirect.com/*",
         "http://www.eurekaselect.com/*",
         "https://www.science.org/*",
-        "https://dom-pubs.onlinelibrary.wiley.com/doi/*"
+        "https://dom-pubs.onlinelibrary.wiley.com/doi/*",
+        "https://ieeexplore.ieee.org/*"
       ],
-      "js": ["inject.js"]
+      "js": [
+        "inject.js"
+      ]
     }
   ],
   "icons": {

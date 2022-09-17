@@ -110,8 +110,8 @@ function wiley() {
   menu.innerHTML += `
   <div class="coolBar__section coolBar--download PdfLink cloned">
     <a href="${sciHubLink(
-      doi
-    )}" title="SciHub" class="coolBar__ctrl pdf-download"
+    doi
+  )}" title="SciHub" class="coolBar__ctrl pdf-download"
       ><img
         src="https://sci-hub.se/misc/img/ravenround.gif"
         alt="SciHub Logo"
@@ -120,6 +120,26 @@ function wiley() {
     </a>
   </div>
   `;
+}
+
+function ieee() {
+  const doiLinks = Array.from(document.querySelectorAll("div"))
+    .filter((div) => div.classList[1] == "stats-document-abstract-doi")
+
+  const doi = String(doiLinks[0].children.item(1)).split(".org/")[1];
+  const doiButton = Array.from(document.querySelectorAll("div"))
+    .filter((div) => div.className == "u-mb-1 u-mt-05 btn-container")
+
+  doiButton[0].innerHTML += `
+  <div _ngcontent-bcv-c141="" class="cite-this-related-btn-wrapper">
+    <xpl-cite-this-modal _ngcontent-bcv-c141="" _nghost-bcv-c122="">
+        <!---->
+        <div _ngcontent-bcv-c141=""><a href=${sciHubLink(doi)}><button _ngcontent-bcv-c141="" placement="bottom"
+                    class="layout-btn-white cite-this-btn">View on SciHub</button></a></div>
+    </xpl-cite-this-modal>
+    <!---->
+  </div>
+`
 }
 
 function addSciHubLink() {
@@ -138,6 +158,9 @@ function addSciHubLink() {
     science();
   } else if (url.includes("wiley.com")) {
     wiley();
+  }
+  else if (url.includes("ieeexplore.ieee.org")) {
+    ieee();
   }
 }
 
